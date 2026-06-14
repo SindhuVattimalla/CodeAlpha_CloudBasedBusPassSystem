@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Ticket</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Book Your Ticket</h2>
+
+    <p>
+        <strong>Route:</strong>
+        {{ bus[1] }}
+    </p>
+
+    <p>
+        <strong>Price:</strong>
+        ₹{{ bus[2] }}
+    </p>
+
+    <form method="POST">
+
+        <label>
+            Travel Date
+        </label>
+
+        <input type="date"
+               name="travel_date"
+               required>
+
+        <label>
+            Number of Tickets
+        </label>
+
+        <input type="number"
+               name="tickets"
+               min="1"
+               required>
+
+        <button type="submit">
+            Confirm Booking
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/dashboard">
+        Back
+    </a>
+
+</div>
+
+</body>
+</html>

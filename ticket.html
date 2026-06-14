@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Pass</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Your Bus Pass</h2>
+
+    <div class="ticket">
+
+        <p>
+            <strong>Pass ID:</strong>
+            {{ booking[6] }}
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            {{ booking[1] }}
+        </p>
+
+        <p>
+            <strong>Route:</strong>
+            {{ booking[2] }}
+        </p>
+
+        <p>
+            <strong>Date:</strong>
+            {{ booking[3] }}
+        </p>
+
+        <p>
+            <strong>Tickets:</strong>
+            {{ booking[4] }}
+        </p>
+
+        <p>
+            <strong>Total Price:</strong>
+            ₹{{ booking[5] }}
+        </p>
+
+    </div>
+
+    <br>
+
+    <a href="/dashboard">
+        Book Another Ticket
+    </a>
+
+    <br><br>
+
+    <a href="/logout">
+        Logout
+    </a>
+
+</div>
+
+</body>
+</html>

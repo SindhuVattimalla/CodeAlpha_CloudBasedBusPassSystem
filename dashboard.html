@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Available Bus Routes</h2>
+
+    <table>
+
+        <tr>
+            <th>Route</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+
+        {% for bus in buses %}
+
+        <tr>
+
+            <td>{{ bus[1] }}</td>
+
+            <td>₹{{ bus[2] }}</td>
+
+            <td>
+                <a href="/booking/{{ bus[0] }}">
+                    Book Now
+                </a>
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/logout">
+        Logout
+    </a>
+
+</div>
+
+</body>
+</html>
